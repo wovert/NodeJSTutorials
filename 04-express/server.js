@@ -1,6 +1,7 @@
 const express = require('express');
 const expressStatic = require('express-static');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
+const myBodyParser = require('./libs/my-body-parser');
 const fs = require('fs');
 
 const server = express();
@@ -9,14 +10,7 @@ const users = {
     'pw': 'admin' 
 };
 
-server.use(bodyParser.urlencoded({
-     // 扩展模式
-    extended: true,
-
-    // post 数据限制, 默认 100k
-    // 2 MB
-    limit: 2*1024*1024 
-}));
+server.use(myBodyParser());
 
 server.post('/login', (req, res, next) => {
     const data = req.body;

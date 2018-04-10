@@ -19,3 +19,11 @@
 - server.post(url, callback)
 - server.use(url, callback)
 
+## 静态文件包
+- cnpm install express-static
+
+## post数据包
+- cnpm install body-parser
+
+
+
