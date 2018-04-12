@@ -31,3 +31,29 @@ server.user(path, (req, res, next)=>{
     req.cookies
 })
 - 下级目录cookie可以访问上级目录cookie
+
+## 清除 cookie
+- res.clearCookie(名字)
+
+
+## 签名
+app.use(cookieParser(sec))
+
+## 加密 - `cookie-encrypter`
+`app.user(cookieEncrypter(sec))`
+- 条件:
+    + signed: true
+    + httpOnly: true
+
+
+# session 中间件
+`cnpm i cookie-session -S`
+
+const cookieSession = require('cookie-session')
+app.use(cookieSession)
+app.use(cookieParser(sec))
+
+## 写入
+
+
+## 读取
