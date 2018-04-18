@@ -9,6 +9,7 @@
 1. 根据缩进,规定层级
 2. 属性放在()里面,属性之间用逗号分割
 3. 内容空格个,直接往回堆
+4. 自动识别单双标签
 
 ## 特殊属性
 - style
@@ -24,6 +25,35 @@
 
 -  JSON 格式编写
     + div&attributes({title: '这是标题', id:'good'}) 
+
+
+- 原样输出内容- file.jade
+html
+  head
+    script
+      |window.onload = function(){
+      |  var btn = document.getElementById('body');
+      |  btn.onclick = function(){alert('test');}
+      |}
+  body
+    |hello
+    |world
+
+- 原样输出内容2- file.jade
+html
+  head
+    script.
+     window.onload = function(){
+      var btn = document.getElementById('body');
+      btn.onclick = function(){alert('test');}
+    }
+  body.
+    hello
+    world
+
+- 原样输出内容3- file.jade
+    script
+      include a.js 
 
 # ejs
 - 非侵入式
