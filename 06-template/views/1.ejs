@@ -7,6 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    My name is <%= name %>
+	<div>>My name is <%= name %></div
+	<div><%=10*20%></div>
+	<div>
+		<%=json.arr[0].user%>
+	</div>
+	<ul>
+		<% for(var i=0; i<json.arr.length; i++) { %>
+		<li>
+			用户名: <%= json.arr[i].user %> <br />
+			密码: <%= json.arr[i].pwd %>	</li>	
+		<% } %>
+	</ul>
+
+	<%= 13 %> + <%= 14 %>
+	<%
+		var str = '<div></div>';
+
+	%>
+	<!-- = 转义输出 -->
+	<%= str %>
+
+	<!-- 不转义输出 -->
+	<%- str %>
+
+	<!-- 导入文件: include 后面不能使用变量 -->
+	<% include ../file.txt %>
+	
+	<% for(var i=0; i<2; i++) { %>
+			<% include ../file.txt %>
+	<% } %>	
+	
+	<!-- 导入不同文件 -->
+	<% if(type == 'admin') { %>
+		<% include ../style/admin.css %>
+	<%	} else { %>
+		<% include ../style/user.css %>
+	<% } %>
+	%>
+
 </body>
 </html>
