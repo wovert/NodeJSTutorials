@@ -4,4 +4,5 @@
 - [Node Modules](./03-module)
 - [Express](./04-express)
 - [cookie/session](./05-cookie-session/)
-- [template](./06-template/)
+- [上传文件](./07-example/)
+- [consolidate](./08-consolidate/)
