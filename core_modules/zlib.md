@@ -14,7 +14,7 @@ Compressing or decompressing a stream (such as a file) can be accomplished(完�
 
 那么，在 Node 里，是如何对资源进行压缩的呢？答案就是`Zlib`模块
 
-[gzip compression](./code/zlib-compression.js)
+[+ gzip compression code file](./code/zlib-compression.js)
 ``` NODE
 const zlib = require('zlib'); // 导入 zlib 包
 const gzip = zlib.createGzip(); // 生成 gzip 压缩对象
@@ -26,7 +26,7 @@ const outf = fs.createWriteStream('./zlib-compression-doc.txt.gz'); // 创建文
 inf.pipe(gzip).pipe(outf); // fs 模块的管道方法读取文件流并再用管道方法写入文件流
 ```
 
-[gzip uncompression](./code/zlib-uncompression.js)
+[+ gzip uncompression code file](./code/zlib-uncompression.js)
 
 ``` NODE
 const zlib = require('zlib'); // 导入 zlib 包
