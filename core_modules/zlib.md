@@ -2,19 +2,9 @@
 
 > The zlib module provides compression functionality implemented using Gzip and Defalate/Inflate. It can be accessed using.
 
-` const zlib = require('zlib');`
+`const zlib = require('zlib');`
 
 Compressing or decompressing a stream (such as a file) can be accomplished(完成) by piping the source stream data through a zlib stream into a destination stream:
-
-[zlib-1.js](./code/zlib-1.js)
-``` NODE
-const gzip = zlib.createGzip();
-cosnt fs = requrie('fs');
-const inp = fs.createReadStream('input.txt');
-const out = fs.createWriteStream('input.txt.gz');
-
-inp.pipe(gzip).pipe(out)
-```
 
 当浏览器向服务器发起资源请求，比如下载一个js文件，服务器先对资源进行压缩，再返回给浏览器，以此节省流量，加快访问速度。
 
@@ -23,4 +13,29 @@ inp.pipe(gzip).pipe(out)
 `Accept-Encoding:gzip, deflate`
 
 那么，在 Node 里，是如何对资源进行压缩的呢？答案就是`Zlib`模块
+
+[gzip compression](./code/zlib-compression.js)
+``` NODE
+const zlib = require('zlib'); // 导入 zlib 包
+const gzip = zlib.createGzip(); // 生成 gzip 压缩对象
+const fs = require('fs'); // 导入 fs 文件 报
+
+const inf = fs.createReadStream('./zlib-compression-doc.txt'); // 创建文件读取流并指定读取文件 
+const outf = fs.createWriteStream('./zlib-compression-doc.txt.gz'); // 创建文件写入流指定写入文件
+
+inf.pipe(gzip).pipe(outf); // fs 模块的管道方法读取文件流并再用管道方法写入文件流
+```
+
+[gzip uncompression](./code/zlib-uncompression.js)
+
+``` NODE
+const zlib = require('zlib'); // 导入 zlib 包
+const gunzip = zlib.createGunzip(); // 生成 gzip 解压对象
+const fs = require('fs'); // 导入 fs 文件包 
+
+const inf = fs.createReadStream('./zlib-compression-doc.txt.gz'); // 创建文件读取流并指定读取文件 
+const outf = fs.createWriteStream('./zlib-uncompression-doc.txt'); // 创建文件写入流指定写入文件
+
+inf.pipe(gunzip).pipe(outf); // fs 模块的管道方法读取文件流并再用管道方法写入文件流
+```
 
