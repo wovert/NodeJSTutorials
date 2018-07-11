@@ -39,3 +39,16 @@ const outf = fs.createWriteStream('./zlib-uncompression-doc.txt'); // 创建文�
 inf.pipe(gunzip).pipe(outf); // fs 模块的管道方法读取文件流并再用管道方法写入文件流
 ```
 
+## 服务端 gzip 压缩
+
+- 服务器判断是否包含accept-encoding 首部，切值为gzip
+  - 否：返回未压缩的文件
+  - 是：返回gzip压缩后的文件
+
+[+ gzip code in server file](./code/zlib-server-compression-file.js)
+
+## 服务端字符串 gzip 压缩
+
+- 采用了`zlib.gzipSync(str)`对字符串进行gzip压缩
+
+[+ gzip code in server string](./code/zlib-server-compression-string.js)
