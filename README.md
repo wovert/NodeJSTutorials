@@ -6,6 +6,7 @@
 - [关于 Node](./about)
 - [核心模块](./core_modules)
   - [资源压缩](./core_modules/zlib.md)
+  - [资源压缩](./core_modules/fs.md)  
 - [Node Synopses](./01-node-synopses/)
 - [Login function](./02-reg-login/)
 - [Node Modules](./03-module)
