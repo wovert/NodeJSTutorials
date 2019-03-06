@@ -1,0 +1,1 @@
+module.exports = "导出的内容"
