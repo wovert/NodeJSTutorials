@@ -1,6 +1,10 @@
 # Node 全栈开发
 
-> 这是 Node 学习笔记以及工作项目当中一些经验。文档根据官方 API 进行简略的进行翻译。如有翻译不当，请多多指教。
+## 学些 Node 的目标
+
+- 敏捷全栈——快速开发全栈应用
+- 架构师——践行工程化思想
+
 
 - [环境安装于配置](./env)
 - [关于 Node](./about)
@@ -14,3 +18,14 @@
 - [cookie/session](./05-cookie-session/)
 - [上传文件](./07-example/)
 - [consolidate](./08-consolidate/)
+
+## Web Application 阶段
+
+1. 后端模版 JSP/ASP/PHP
+2. 前后端分离 jQuery
+3. 工程化 ng/webpack/glup
+4. 全栈时代——大前端
+5. 云Serverless + 端Flutter时代 - 体验 微信云开发
+
+
+
